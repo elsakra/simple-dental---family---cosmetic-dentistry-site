@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply text-gray-700 leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-sage-700 font-medium leading-tight;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-dental-blue-500 hover:bg-dental-blue-600 text-white px-8 py-3 rounded-lg font-semibold uppercase tracking-wide transition-all duration-300 transform hover:scale-105 hover:shadow-lg;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent hover:bg-dental-blue-50 text-dental-blue-500 border-2 border-dental-blue-500 px-8 py-3 rounded-lg font-semibold uppercase tracking-wide transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply bg-white hover:bg-sage-50 text-sage-600 border-2 border-sage-300 px-6 py-2 rounded-lg font-medium transition-all duration-300;
+  }
+  
+  .section-spacing {
+    @apply py-16 md:py-24;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto px-6;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1;
+  }
+  
+  .hero-heading {
+    @apply text-4xl md:text-5xl lg:text-6xl font-medium text-sage-700 leading-tight;
+  }
+  
+  .section-heading {
+    @apply text-3xl md:text-4xl font-medium text-sage-700 mb-6;
+  }
+  
+  .animate-on-scroll {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+  
+  .animate-on-scroll.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,0 +1,92 @@
+---
+// Header component
+---
+
+<!-- Top notification bar -->
+<div class="bg-warm-yellow text-sage-700 py-2 text-sm text-center overflow-hidden">
+  <div class="animate-marquee whitespace-nowrap">
+    <span class="mx-4">🦷 New Patient Special: Comprehensive Exam + Cleaning for $99</span>
+    <span class="mx-4">📞 Call (281) 555-0123 to schedule your appointment</span>
+    <span class="mx-4">⭐ Serving Katy families with quality dental care since 2010</span>
+  </div>
+</div>
+
+<!-- Main navigation -->
+<nav class="bg-white sticky top-0 z-50 transition-all duration-300">
+  <div class="container-max">
+    <div class="flex items-center justify-between py-4">
+      <!-- Logo -->
+      <div class="flex items-center">
+        <a href="/" class="text-2xl font-bold text-sage-600 hover:text-sage-700 transition-colors">
+          Simple Dental
+        </a>
+      </div>
+      
+      <!-- Desktop Navigation -->
+      <div class="hidden lg:flex items-center space-x-8">
+        <a href="/" class="text-gray-700 hover:text-sage-600 font-medium transition-colors">Home</a>
+        <a href="/about" class="text-gray-700 hover:text-sage-600 font-medium transition-colors">About</a>
+        <a href="/services" class="text-gray-700 hover:text-sage-600 font-medium transition-colors">Services</a>
+        <a href="/team" class="text-gray-700 hover:text-sage-600 font-medium transition-colors">Our Team</a>
+        <a href="/contact" class="text-gray-700 hover:text-sage-600 font-medium transition-colors">Contact</a>
+      </div>
+      
+      <!-- CTA Button -->
+      <div class="hidden lg:flex items-center space-x-4">
+        <a href="tel:+12815550123" class="text-sage-600 hover:text-sage-700 font-medium">
+          (281) 555-0123
+        </a>
+        <a href="/contact" class="btn-primary">
+          Book Now
+        </a>
+      </div>
+      
+      <!-- Mobile menu button -->
+      <button class="lg:hidden p-2" id="mobile-menu-button">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+    
+    <!-- Mobile Navigation -->
+    <div class="lg:hidden hidden" id="mobile-menu">
+      <div class="py-4 space-y-4 border-t border-gray-200">
+        <a href="/" class="block text-gray-700 hover:text-sage-600 font-medium transition-colors">Home</a>
+        <a href="/about" class="block text-gray-700 hover:text-sage-600 font-medium transition-colors">About</a>
+        <a href="/services" class="block text-gray-700 hover:text-sage-600 font-medium transition-colors">Services</a>
+        <a href="/team" class="block text-gray-700 hover:text-sage-600 font-medium transition-colors">Our Team</a>
+        <a href="/contact" class="block text-gray-700 hover:text-sage-600 font-medium transition-colors">Contact</a>
+        <div class="pt-4 border-t border-gray-200">
+          <a href="tel:+12815550123" class="block text-sage-600 font-medium mb-3">
+            (281) 555-0123
+          </a>
+          <a href="/contact" class="btn-primary inline-block">
+            Book Now
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<script>
+  // Mobile menu toggle
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  mobileMenuButton?.addEventListener('click', () => {
+    mobileMenu?.classList.toggle('hidden');
+  });
+</script>
+
+<style>
+  @keyframes marquee {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
+  }
+</style>
